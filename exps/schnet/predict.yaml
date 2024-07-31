@@ -1,0 +1,25 @@
+# @package _global_
+
+defaults:
+  - override /model: nnp
+  - override /model/representation: schnet
+  - override /trainer: ddp_trainer
+
+run:
+  experiment: predict
+
+globals:
+  cutoff: 5.0
+  lr: 5e-4
+  property: energy
+  aggregation: sum
+
+data:
+  datapath: data/711-schnet-test.db
+  transforms:
+    - _target_: schnetpack.transform.MatScipyNeighborList
+      cutoff: ${globals.cutoff}
+    - _target_: schnetpack.transform.CastTo32
+
+ckpt_path: runs/b16d96a2-74e3-11ee-9b86-0894ef8005d2/checkpoints/epoch=1371.ckpt
+
