@@ -1,19 +1,12 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/dskoda/Zeolites-AMD/main/figs/toc.jpg" width="500"><br>
-</div>
-
-# Inorganic synthesis-structure maps in zeolites with ML and crystallographic distances
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8422565.svg)](https://doi.org/10.5281/zenodo.8422565)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8422373.svg)](https://doi.org/10.5281/zenodo.8422373)
+# Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis
 
 This repository contains all the data, plots, scripts, and notebooks to reproduce the manuscript:
 
-D. Schwalbe-Koda et al. "Inorganic synthesis-structure maps in zeolites with machine learning and crystallographic distances". arXiv:2307.10935 (2023)
+D. Schwalbe-Koda, N. Govindarajan, and J. Varley. " Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis". ChemRxiv (2023). DOI: 10.26434/chemrxiv-2023-f6l23
 
-All the raw data for the computational analysis is found in the [data](data/) folder.
-The scripts used to reproduce the plots is available at the [zeo_amd](zeo_amd/) folder.
-The Jupyter Notebooks in [nbs](nbs/) contain all the code required to reproduce the analysis and the plots.
+- All the raw data for the computational analysis is found in the `data` folder.
+- The Jupyter Notebooks in `nbs` contain all the code required to reproduce the analysis and the plots shown in the manuscript.
+- The `latinn` folder contains the Python code implementing the lateral interaction model and the SOAP-based NN described in the manuscript.
 
 ## Installing and running
 
@@ -21,16 +14,15 @@ To reproduce the results from the manuscript, first create a new Python environm
 Then, clone this repository and install it with
 
 ```bash
-git clone git@github.com:dskoda/Zeolites-AMD.git
-cd Zeolites-AMD
+git clone git@github.com:dskoda/ML-Coverage.git
+cd ML-Coverage
 pip install -e .
 ```
 
-This should install all dependencies (see [pyproject.toml](pyproject.toml)) and two scripts (`zamd_compare` and `zamd_hyperopt`).
-Importantly, this also installs the [`average-minimum-distance`](https://github.com/dwiddo/average-minimum-distance) package that compare crystals by their AMD or PDD.
+This should install all dependencies (see [pyproject.toml](pyproject.toml)) to reproduce the data in the manuscript.
 For full reproducibility, all packages used when producing the results of this work are given in the [environment.txt](environment.txt) file.
 
-To download the raw data that has all the results for this paper, simply run
+To download the raw data that has all the results for this paper (and the required data for analysis), simply run
 
 ```bash
 chmod +x download.sh
@@ -39,55 +31,43 @@ chmod +x download.sh
 
 in the root of the repository.
 While some of the data is already available in the repository, most of the raw data is too large for GitHub.
-Thus, part of the raw data that reproduces the paper is hosted on Zenodo for persistent storage (DOI: [10.5281/zenodo.8422372](https://doi.org/10.5281/zenodo.8422372)).
+Thus, part of the raw data that reproduces the paper is hosted on Zenodo for persistent storage (DOI: TBD).
 
-## Description of the data
+## Data Description
 
-The raw data folder contains all results shown in the paper, including:
+After downloading the raw data folder, the results will exhibit all data from the paper, including:
 
- - Tabulated data for all losses, hyperparameters, and datasets analyzed in the manuscript.
- - Distance matrices calculated with AMD for all known and hypothetical zeolites.
- - Predictions of inorganic synthesis conditions for hypothetical zeolites.
- - Synthesis data used to perform regression of the classifiers.
- - Datasets of hypothetical and known zeolites.
- - Final XGBoost models used in the work.
- - All figures plotted in this work
+- Data analysis for reproducing the plots in the paper
+- Train/test splits for the MACE model used in the paper
+- Scripts to evaluate the models
+- Pre-trained models used to perform the analysis in the manuscript
 
-For more details, see the [data](data/) and [dsets](dsets/) folders.
+## Code Description
 
-## Description of the code
-
-The Jupyter notebooks at [nbs](nbs/) contain all information needed to reproduce the analysis of the manuscript.
-Each notebook performs part of the analysis and replots the figures from the paper [figs](figs/).
-The code in [zeo_amd](zeo_amd/) simplifies the analysis in the notebooks by bundling relevant functions and scripts in the `zeo_amd` package.
-They contain scripts that perform, for this specific work:
-
-- Calculation of the distance matrix using the `amd` code
-- Plotting of the minimum spanning tree
-- Clustering of the zeolite data
-- Training and selection of classifiers
-- Analysis of the results from hyperparameter optimization
+- `nbs/`: Jupyter notebooks to reproduce all the results from the manuscript. The notebooks build on the downloaded data.
+- `scripts/`: Scripts for data preprocessing, sampling, and evaluation.
+- `latinn/`: Python module with utilities, models, data handling, and training routines for the lateral interaction model and the SOAP-based NN in the manuscript
+- `exps/`: Bash scripts to run specific training routines for the lateral interaction model and the SOAP-based NN.
 
 ## Citing
 
 This data has been produced for the following paper:
 
 ```bibtex
-@article{SchwalbeKoda2023Inorganic,
-    title = {Inorganic synthesis-structure maps in zeolites with machine learning and crystallographic distances},
-    author = {Schwalbe-Koda, Daniel, Widdowson, Daniel E., Pham, Tuan Anh, Kurlin, Vitaliy E.},
-    year = {2023},
-    journal = {arXiv:2307.10935},
-    doi = {10.48550/arXiv.2307.10935},
-    url = {https://doi.org/10.48550/arXiv.2307.10935},
-    arxiv = {2307.10935},
+@article{schwalbekoda2023controlling,
+  title={Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis},
+  author={Schwalbe-Koda, Daniel and Govindarajan, Nitish and Varley, Joel},
+  year={2023},
+  journal = {ChemRxiv},
+  doi = {10.26434/chemrxiv-2023-f6l23},
+  url = {https://doi.org/10.26434/chemrxiv-2023-f6l23},
 }
 ```
 
 ## License
 
-The data and all the content from this repository is distributed under the [Creative Commons Attribution 4.0 (CC-BY 4.0)](LICENSE.md).
+The code from this repository is distributed under the [BSD-3 Clause License](LICENSE.md).
 
 This work was produced under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344.
 
-Dataset released as: LLNL-MI-854709.
+Code released as: LLNL-CODE-XXXXXX.
