@@ -67,7 +67,3 @@ This data has been produced for the following paper:
 ## License
 
 The code from this repository is distributed under the [BSD-3 Clause License](LICENSE.md).
-
-This work was produced under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344.
-
-Code released as: LLNL-CODE-XXXXXX.
