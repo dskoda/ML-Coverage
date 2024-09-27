@@ -1,8 +1,8 @@
-# Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis
+# Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis
 
 This repository contains all the data, plots, scripts, and notebooks to reproduce the manuscript:
 
-D. Schwalbe-Koda, N. Govindarajan, and J. Varley. " Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis". ChemRxiv (2023). DOI: 10.26434/chemrxiv-2023-f6l23
+D. Schwalbe-Koda, N. Govindarajan, and J. Varley. "Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis". ChemRxiv (2023). DOI: 10.26434/chemrxiv-2023-f6l23
 
 - All the raw data for the computational analysis is found in the `data` folder.
 - The Jupyter Notebooks in `nbs` contain all the code required to reproduce the analysis and the plots shown in the manuscript.
