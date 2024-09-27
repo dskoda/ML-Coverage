@@ -54,8 +54,8 @@ After downloading the raw data folder, the results will exhibit all data from th
 This data has been produced for the following paper:
 
 ```bibtex
-@article{schwalbekoda2023controlling,
-  title={Controlling neural network extrapolation enables efficient and comprehensive sampling of coverage effects in catalysis},
+@article{schwalbekoda2023understanding,
+  title={Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis},
   author={Schwalbe-Koda, Daniel and Govindarajan, Nitish and Varley, Joel},
   year={2023},
   journal = {ChemRxiv},
