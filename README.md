@@ -1,8 +1,8 @@
-# Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis
+# Comprehensive sampling of coverage effects in catalysis by leveraging generalization in neural network models
 
 This repository contains all the data, plots, scripts, and notebooks to reproduce the manuscript:
 
-D. Schwalbe-Koda, N. Govindarajan, and J. Varley. "Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis". ChemRxiv (2023). DOI: 10.26434/chemrxiv-2023-f6l23
+D. Schwalbe-Koda, N. Govindarajan, and J. Varley. "Comprehensive sampling of coverage effects in catalysis by leveraging generalization in neural network models". ChemRxiv (2023). DOI: 10.26434/chemrxiv-2023-f6l23
 
 - All the raw data for the computational analysis is found in the `data` folder.
 - The Jupyter Notebooks in `nbs` contain all the code required to reproduce the analysis and the plots shown in the manuscript.
@@ -55,7 +55,7 @@ This data has been produced for the following paper:
 
 ```bibtex
 @article{schwalbekoda2023understanding,
-  title={Understanding neural network generalization enables efficient and comprehensive sampling of coverage effects in catalysis},
+  title={Comprehensive sampling of coverage effects in catalysis by leveraging generalization in neural network models},
   author={Schwalbe-Koda, Daniel and Govindarajan, Nitish and Varley, Joel},
   year={2023},
   journal = {ChemRxiv},
